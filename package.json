@@ -1,0 +1,18 @@
+{
+  "name": "MyImgur",
+  "version": "0.0.1",
+  "description": "My Imgur Feed",
+  "author": "David Song",
+  "license": "Copyright 2016, David Song. All rights reserved.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node_modules/.bin/nodemon --ignore node_modules server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.10.2",
+    "nodemon": "^1.2.1",
+    "body-parser": "^1.14.2",
+    "morgan": "^1.6.1",
+    "request": "^2.67.0"
+  }
+}

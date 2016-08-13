@@ -1,0 +1,22 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# node-waf configuration
+.lock-wscript
+
+# Dependency directory
+node_modules
+
+# Ignore Keys
+env.js
+
+# OSX
+.DS_Store
+.localized

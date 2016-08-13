@@ -1,0 +1,175 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  background: hsla(0,0%,0%,.1);
+  font: 13px Helvetica, Arial;
+  /* expand background with lazy loading*/
+  max-width: 100%;
+  height: auto;
+}
+
+/* 
+--------------------------------------------------
+break points
+--------------------------------------------------
+*/
+@media only screen 
+  and (max-width: 736px) { 
+  .mobile {
+    display:block;
+  }
+  .desktop {
+    display:none;
+  }
+  .tablet {
+    display:none;
+  }
+}
+
+@media only screen 
+  and (min-width: 736px) 
+  and (max-width: 1200px){ 
+  .tablet {
+    display:block;
+  }
+  .desktop {
+    display:none;
+  }
+  .mobile {
+    display:none;
+  }
+}
+
+@media only screen 
+  and (min-width: 1200px) {
+  .desktop {
+    display:block;
+  }
+  .tablet {
+    display:none;
+  }
+  .mobile {
+    display:none;
+  }
+}
+
+/* 
+--------------------------------------------------
+toolbar
+--------------------------------------------------
+*/
+.md-toolbar-tools {
+  border-bottom: solid 2px #CCC;
+}
+
+/* search*/
+.search {
+  position: relative;
+  font-size: .8em;
+}
+
+.search input {
+  width: 275px;
+  height: 40px;
+  border: 2px solid #CCC;
+  text-indent: 10px;
+}
+
+/*.search-desktop {
+  margin-right: 100px;
+}
+
+.search-tablet {
+  margin-right: 50px;
+}
+*/
+.search .search-icon {  
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.material-icons.search-icon {
+  color: #CCC;
+}
+
+
+/* 
+--------------------------------------------------
+flexbox
+--------------------------------------------------
+*/
+.FlexContainer {
+  /*background: hsla(0,0%,0%,.1);*/
+  max-width: 905px;
+  margin: auto;
+  padding-top: 20px;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.FlexItem {
+  background: #FFF;
+  margin: 5px 2px 5px 2px;
+  min-width: 222px;
+  max-width: 222px;
+  padding: 15px;
+  overflow-wrap: break-word;
+  border: solid 1px #CCC; 
+  min-height: 310px;
+}
+
+.flex-item-stretch {  
+  align-self: stretch;
+}
+
+/* 
+--------------------------------------------------
+post
+--------------------------------------------------
+*/
+.post-image {
+  height: 230px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 190px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 
+--------------------------------------------------
+toolbar
+--------------------------------------------------
+*/
+.icon-container {
+  position:absolute;
+  bottom: -16px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon {
+  width: 40px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0 0 1em 0;
+}
+
+.info {
+  color: #808080;
+}
+
+.info-description {
+  padding: 1em 0 1em 0;
+}

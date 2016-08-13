@@ -1,0 +1,82 @@
+<!-- desktop -->
+<md-toolbar class="desktop">
+  <div class="md-toolbar-tools"> 
+    <h2>
+      <span class="md-headline">My Feed</span>
+    </h2>
+    <span flex></span>
+    <div class="search search-desktop">
+       <md-icon class="material-icons search-icon">&#xE8B6;</md-icon>
+       <input ng-model="searchInput" placeholder="search...">
+    </div>
+  </div>
+</md-toolbar>
+
+<!-- tablet -->
+<md-toolbar class="tablet">
+  <div class="md-toolbar-tools"> 
+    <h2>
+      <span class="md-headline">My Feed</span>
+    </h2>
+    <span flex></span>
+    <div class="search search-tablet">
+       <md-icon class="material-icons search-icon">&#xE8B6;</md-icon>
+       <input ng-model="searchInput" placeholder="search...">
+    </div>
+  </div>
+</md-toolbar>
+
+<!-- mobile -->
+<md-toolbar class="mobile">
+  <div class="md-toolbar-tools" data-ng-show="ctrl.showMobileMainHeader">
+    <h2>
+      <span class="md-headline">My Feed</span>
+    </h2>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Search" data-ng-click="ctrl.showMobileMainHeader = false">
+      <md-tooltip>Search</md-tooltip>
+      <md-icon class="material-icons search-icon">&#xE8B6;</md-icon>
+    </md-button>
+  </div>
+
+  <div class="md-toolbar-tools" data-ng-hide="ctrl.showMobileMainHeader">
+    <md-button class="md-icon-button" aria-label="Back" data-ng-click="ctrl.showMobileMainHeader = true">
+      <md-tooltip>Back</md-tooltip>
+      <md-icon class="material-icons search-icon">&#xE5C4;</md-icon>
+    </md-button>
+    <span flex></span>
+    <div class="search">
+       <md-icon class="material-icons search-icon">&#xE8B6;</md-icon>
+       <input ng-model="searchInput" placeholder="search...">
+    </div>
+  </div>
+</md-toolbar>
+
+<div class="FlexContainer" layout layout-wrap layout-align="left">
+  <div 
+  ng-repeat="(key, val) in ctrl.posts | filter:searchInput" 
+  ng-mouseenter="show=true" 
+  ng-mouseleave="show=false"
+  class="FlexItem ng-class:{ 'flex-item-stretch': show };">
+
+    <div ng-if="val.link">
+
+      <div class="post-image">
+        <div class="image-container">
+          <a ng-href="{{val.link}}" target="blank">
+            <img class="lazyLoad image" src="../assets/images/grey.gif" data-original="{{val.link}}" width="190" height="190">
+          </a>
+          <!-- <img class="image" ng-src={{val.link}}> -->
+          
+        </div>
+      </div>
+
+      <div class="title">{{val.title}}</div>
+      
+      <div class="info" ng-if="show">
+        <div class="info-description">{{val.description}}</div>
+        <div class="info-votes">Up: {{val.ups}} Down:{{val.downs}}</div>
+      </div>
+
+    </div>
+</div>
